@@ -1,29 +1,30 @@
-#cloud-config
+---
+# cloud-config
 autoinstall:
   version: 1
   identity:
-    hostname: medcap0
-    username: medcap
+    hostname: 'medcap0'
+    username: 'medcap'
     password: '$6$83BRHeazy$EVDiUldLq/J1rff.rquWUNnniCQkTeXWFPrVBFweWd2xnirnerJlZUTT2ix7clWax/cx2MkP6X.MiL3CPYzUP.'
   packages:
-    - openssh-server
-    - ffmpeg
-    - libnginx-mod-rtmp
+    - 'openssh-server'
+    - 'ffmpeg'
+    - 'libnginx-mod-rtmp'
   late-commands:
-    - echo 'net.ifnames=0' >> /etc/default/grub
-    - update-grub
-    - reboot
+    - "echo 'net.ifnames=0' >> /etc/default/grub"
+    - 'update-grub'
+    - 'reboot'
   network:
     version: 2
     ethernets:
       eth0:
-        dhcp4: true
-        dhcp-identifier: mac
+        dhcp4: 'true'
+        dhcp-identifier: 'mac'
     wifis:
       wlan0:
-        optional: true
-        dhcp-identifier: mac
-        dhcp4: true
+        optional: 'true'
+        dhcp-identifier: 'mac'
+        dhcp4: 'true'
         access-points:
           crowdskills:
-            password: creigDuvik7
+            password: 'creigDuvik7'
